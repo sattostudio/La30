@@ -14,6 +14,48 @@ body {
     color: white;
 }
 
+.hero {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 80px 60px;
+background: radial-gradient(circle at 70% 50%, rgba(255,0,200,0.15), transparent 40%);
+}
+
+.hero-left h1 {
+font-size: 70px;
+font-weight: 700;
+margin: 0;
+}
+
+.hero-left h2 {
+font-size: 28px;
+background: linear-gradient(90deg, #00f0ff, #ff00c8, #ff7a00);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.hero-left p {
+color: #aaa;
+margin: 20px 0;
+}
+
+.hero-logo {
+width: 350px;
+filter: drop-shadow(0 0 30px #ff00c8);
+}
+
+.btn-glow {
+padding: 14px 28px;
+border-radius: 40px;
+border: none;
+color: white;
+background: linear-gradient(90deg, #00f0ff, #ff00c8, #ff7a00);
+cursor: pointer;
+box-shadow: 0 0 20px rgba(255,0,200,0.5);
+}
+    
+    
 header {
     display: flex;
     justify-content: space-between;
@@ -125,6 +167,22 @@ footer {
 </header>
 
 <section class="hero">
+<div class="hero-left">
+<h1>LA 30</h1>
+<h2>MÚSICA SIN LÍMITES</h2>
+<p>
+Urbano, electrónica y más. 
+Transmitimos 24/7 para acompañarte donde estés.
+</p>
+
+<button class="btn-glow">🔴 Escuchar en vivo</button>
+</div>
+
+<div class="hero-right">
+<img src="logo.png" class="hero-logo">
+</div>
+</section>
+
     <div class="hero-text">
         <h1>LA 30</h1>
         <p>Música sin límites. Urbano, electrónica y más. Vive la vibra.</p>
