@@ -283,11 +283,16 @@ Transmitimos 24/7 para acompañarte donde estés.
 </footer>
 
 <script>
+<script>
+const radio = document.getElementById("radio");
 const nowPlaying = document.getElementById("nowPlaying");
+const buttons = document.querySelectorAll(".play-btn");
+
+let playing = false;
 
 function toggleRadio() {
     if (!playing) {
-        radio.play();
+        radio.play().catch(err => console.log(err));
         playing = true;
         updateButtons("⏸");
         nowPlaying.textContent = "Reproduciendo 🔊";
@@ -298,6 +303,13 @@ function toggleRadio() {
         nowPlaying.textContent = "En vivo 🔴";
     }
 }
+
+function updateButtons(icon) {
+    buttons.forEach(btn => {
+        btn.innerHTML = icon;
+    });
+}
+</script>
 </script>
 
 <div class="player-bar">
