@@ -283,20 +283,19 @@ Transmitimos 24/7 para acompañarte donde estés.
 </footer>
 
 <script>
-const radio = document.getElementById("radio");
-let playing = false;
+const nowPlaying = document.getElementById("nowPlaying");
 
 function toggleRadio() {
-    const btn = document.querySelector(".play-btn");
-
     if (!playing) {
         radio.play();
-        btn.innerHTML = "⏸";
         playing = true;
+        updateButtons("⏸");
+        nowPlaying.textContent = "Reproduciendo 🔊";
     } else {
         radio.pause();
-        btn.innerHTML = "▶";
         playing = false;
+        updateButtons("▶");
+        nowPlaying.textContent = "En vivo 🔴";
     }
 }
 </script>
