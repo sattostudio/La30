@@ -10,520 +10,301 @@
 <style>
 
 /* RESET */
-* {
-    box-sizing: border-box;
-}
+*{box-sizing:border-box;margin:0;padding:0;}
 
-body {
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    color: white;
-    background:
-    radial-gradient(circle at 20% 30%, rgba(0,240,255,0.08), transparent 40%),
-    radial-gradient(circle at 80% 70%, rgba(255,0,200,0.08), transparent 40%),
-    #020617;
-
-    padding-bottom: 120px;
+body{
+font-family:'Montserrat',sans-serif;
+color:white;
+background:
+radial-gradient(circle at 20% 30%, rgba(0,240,255,0.08), transparent 40%),
+radial-gradient(circle at 80% 70%, rgba(255,0,200,0.08), transparent 40%),
+#020617;
+padding-bottom:140px;
 }
 
 /* HEADER */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 40px;
 }
 
-.logo {
-    height: 60px;
+nav a{
+margin:0 15px;
+color:#aaa;
+text-decoration:none;
 }
 
-nav a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: #aaa;
-}
-
-nav a:hover {
-    color: white;
-}
+nav a:hover{color:white}
 
 /* HERO */
-.hero-pro {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 80px 60px;
+.hero{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:80px 60px;
 }
 
-.hero-pro h1 {
-    font-size: 80px;
-    margin: 0;
+.hero h1{font-size:80px}
+.hero h2{
+background:linear-gradient(90deg,#00f0ff,#ff00c8,#ff7a00);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
-.hero-pro h2 {
-    font-size: 30px;
-    background: linear-gradient(90deg, #00f0ff, #ff00c8, #ff7a00);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.btn-live{
+margin-top:20px;
+padding:15px 30px;
+border-radius:30px;
+border:none;
+cursor:pointer;
+background:linear-gradient(90deg,#ff00c8,#ff7a00);
+color:white;
+box-shadow:0 0 20px rgba(255,0,200,0.7);
 }
 
-.btn-live {
-    margin-top: 20px;
-    padding: 14px 30px;
-    border-radius: 30px;
-    border: none;
-    cursor: pointer;
-    background: linear-gradient(90deg, #ff00c8, #ff7a00);
-    color: white;
-    box-shadow: 0 0 20px rgba(255,0,200,0.7);
+/* PLAYER */
+.main-player{
+margin:40px;
+padding:25px;
+border-radius:20px;
+background:rgba(15,23,42,0.9);
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
 
-/* PLAYER PRINCIPAL */
-.main-player {
-    margin: 40px;
-    padding: 25px;
-    border-radius: 20px;
-    background: rgba(15,23,42,0.9);
-    backdrop-filter: blur(10px);
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    box-shadow: 0 0 40px rgba(255,0,200,0.2);
+.play{
+width:80px;height:80px;
+border-radius:50%;
+border:none;
+font-size:25px;
+background:linear-gradient(135deg,#00f0ff,#ff00c8);
+color:white;
+cursor:pointer;
 }
 
-.play-main {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    border: none;
-    font-size: 24px;
-    color: white;
-    cursor: pointer;
-
-    background: linear-gradient(135deg, #00f0ff, #ff00c8);
-    box-shadow: 0 0 30px rgba(255,0,200,0.7);
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr 1fr;
+gap:20px;
+padding:40px;
 }
 
-/* TARJETAS */
-.section {
-    padding: 40px;
+.card{
+background:#0f172a;
+border-radius:20px;
+padding:20px;
+box-shadow:0 0 30px rgba(255,0,200,0.1);
+transition:0.3s;
 }
 
-.cards {
-    display: flex;
-    gap: 20px;
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 0 30px rgba(255,0,200,0.4);
 }
 
-.card {
-    background: #0f172a;
-    padding: 20px;
-    border-radius: 15px;
-    flex: 1;
-    transition: 0.3s;
+/* TITULOS */
+.card h3{
+margin-bottom:15px;
+color:#ff00c8;
 }
 
-.card:hover {
-    transform: translateY(-5px);
+/* PROGRAMACION */
+.program li{
+margin:10px 0;
+font-size:14px;
 }
 
-/* PLAYER FLOTANTE */
-.player-bar {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-
-    width: 90%;
-    max-width: 900px;
-
-    background: rgba(10,10,20,0.95);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 12px 25px;
-    z-index: 999;
+/* PLAYER BAR */
+.player-bar{
+position:fixed;
+bottom:20px;
+left:50%;
+transform:translateX(-50%);
+width:90%;
+max-width:900px;
+background:rgba(10,10,20,0.95);
+padding:15px 25px;
+border-radius:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
 
-.play-btn {
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-
-    background: linear-gradient(135deg, #00f0ff, #ff00c8);
-    color: white;
+.play-btn{
+width:55px;height:55px;
+border-radius:50%;
+border:none;
+font-size:18px;
+background:linear-gradient(135deg,#00f0ff,#ff00c8);
+color:white;
+cursor:pointer;
 }
 
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 20px;
-    color: #666;
+/* EQUALIZER */
+.eq{
+display:flex;
+gap:4px;
 }
 
-.equalizer {
-    display: flex;
-    align-items: flex-end;
-    gap: 4px;
-    height: 30px;
-    margin-top: 10px;
+.eq span{
+width:3px;
+height:10px;
+background:#ff00c8;
+animation:eq 1s infinite;
+animation-play-state:paused;
 }
 
-.equalizer span {
-    width: 4px;
-    height: 10px;
-    background: linear-gradient(180deg, #00f0ff, #ff00c8);
-    border-radius: 2px;
-
-    animation: equalize 1s infinite ease-in-out;
-    animation-play-state: paused;
+@keyframes eq{
+0%{height:5px}
+50%{height:20px}
+100%{height:5px}
 }
 
-/* diferentes ritmos */
-.equalizer span:nth-child(1) { animation-delay: 0s; }
-.equalizer span:nth-child(2) { animation-delay: 0.2s; }
-.equalizer span:nth-child(3) { animation-delay: 0.4s; }
-.equalizer span:nth-child(4) { animation-delay: 0.6s; }
-.equalizer span:nth-child(5) { animation-delay: 0.8s; }
-
-@keyframes equalize {
-    0% { height: 5px; }
-    50% { height: 25px; }
-    100% { height: 8px; }
-}    
-
-.highlight {
-    background: linear-gradient(135deg, rgba(0,240,255,0.15), rgba(255,0,200,0.15));
-    border: 1px solid rgba(255,255,255,0.1);
-    text-align: center;
-    font-size: 18px;
-}
-
-/* GRID PRINCIPAL */
-.radio-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr 1fr;
-    gap: 20px;
-    padding: 40px;
-}
-
-/* CAJAS */
-.box {
-    background: rgba(15,23,42,0.8);
-    border-radius: 20px;
-    padding: 20px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.05);
-
-    box-shadow: 0 0 20px rgba(255,0,200,0.1);
-    transition: 0.3s;
-}
-
-.box:hover {
-    transform: translateY(-5px);
-}
-
-/* TITULOS INTERNOS NEON */
-.box h3 {
-    font-size: 14px;
-    color: #ff00c8;
-    margin-bottom: 15px;
-    letter-spacing: 1px;
-}
-
-/* SONANDO AHORA */
-.now-content {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-}
-
-.cover {
-    width: 80px;
-    height: 80px;
-    border-radius: 10px;
-    object-fit: cover;
-}
-
-/* GENEROS */
-.genres-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    text-align: center;
-}
-
-.genres-grid div {
-    font-size: 14px;
-}
-
-.genres-grid span {
-    display: block;
-    margin-top: 5px;
-    color: #aaa;
-}
-
-/* PROGRAMACIÓN */
-.schedule ul {
-    list-style: none;
-    padding: 0;
-}
-
-.schedule li {
-    margin-bottom: 10px;
-    font-size: 14px;
-}
-
-.schedule span {
-    color: #00f0ff;
-    margin-right: 10px;
-}
-
-/* FILA INFERIOR */
-.about {
-    grid-column: span 2;
-}
-
-.social {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.social-icons {
-    display: flex;
-    gap: 15px;
-    font-size: 24px;
-}    
-    
 </style>
 </head>
 
 <body>
 
 <header>
-    <img src="logo.png" class="logo">
-    <nav>
-        <a href="#">Inicio</a>
-        <a href="#">En vivo</a>
-        <a href="#">Programación</a>
-        <a href="#">Contacto</a>
-    </nav>
+<h2>LA 30</h2>
+<nav>
+<a href="#">Inicio</a>
+<a href="#">En vivo</a>
+<a href="#">Programación</a>
+<a href="#">Contacto</a>
+</nav>
 </header>
 
-<section class="hero-pro">
-    <div>
-        <h1>LA 30</h1>
-        <h2>MÚSICA SIN LÍMITES</h2>
-        <p>Urbano, electrónica y más. Transmitimos 24/7.</p>
-
-        <button class="btn-live" onclick="toggleRadio()">🔴 EN VIVO</button>
-    </div>
-
-    <img src="logo.png" width="300">
+<section class="hero">
+<div>
+<h1>LA 30</h1>
+<h2>MÚSICA SIN LÍMITES</h2>
+<p>Urbano, electrónica y más. 24/7.</p>
+<button class="btn-live" onclick="toggleRadio()">🔴 EN VIVO</button>
+</div>
+<img src="logo.png" width="300">
 </section>
 
 <!-- PLAYER PRINCIPAL -->
 <div class="main-player">
-    <div>
-        <h3>LA 30</h3>
-        <p>
-<strong id="artistName">LA 30</strong><br>
-<span id="songTitle">En vivo 🔴</span>
-</p>
-
-<div class="equalizer" id="equalizer">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
+<div>
+<h3 id="artist">LA 30</h3>
+<p id="track">Cargando...</p>
 </div>
-    </div>
 
-    <button class="play-main play-control" onclick="toggleRadio()">▶</button>
+<button class="play play-control" onclick="toggleRadio()">▶</button>
 
-    <input type="range" min="0" max="1" step="0.01" value="1"
-        onchange="radio.volume = this.value">
+<div class="eq" id="eq">
+<span></span><span></span><span></span><span></span>
+</div>
 </div>
 
 <audio id="radio" src="https://radio.conectarservidor.com:8006/stream"></audio>
 
-<section class="radio-grid">
+<!-- GRID PRO -->
+<div class="grid">
 
-    <!-- SONANDO AHORA -->
-    <div class="box now-playing">
-        <h3>SONANDO AHORA</h3>
+<div class="card">
+<h3>Sonando ahora</h3>
+<p id="trackCard">Cargando...</p>
+</div>
 
-        <div class="now-content">
-            <img src="programa.jpg" class="cover">
+<div class="card">
+<h3>Lo que suena en LA 30</h3>
+<p>Trap · HipHop · Techno · House · Afro</p>
+</div>
 
-            <div>
-                <strong id="cardArtist">LA 30</strong>
-                <p id="cardTitle">En vivo 🔴</p>
-            </div>
-        </div>
-    </div>
+<div class="card program">
+<h3>Programación</h3>
+<ul>
+<li>00:00 Night Vibes</li>
+<li>06:00 Wake Up</li>
+<li>12:00 Flow 30</li>
+<li>18:00 After Party</li>
+</ul>
+</div>
 
-    <!-- LO QUE SUENA -->
-    <div class="box genres">
-        <h3>TU MÚSICA, TU VIBRA</h3>
+<div class="card">
+<h3>Sobre LA 30</h3>
+<p>Radio online 24/7 conectando sonidos urbanos y electrónicos.</p>
+</div>
 
-        <div class="genres-grid">
-            <div>🎤<span>TRAP</span></div>
-            <div>👑<span>HIP HOP</span></div>
-            <div>🔥<span>REGGAETON</span></div>
-            <div>🎧<span>TECHNO</span></div>
-            <div>🎵<span>HOUSE</span></div>
-            <div>🌍<span>AFRO</span></div>
-        </div>
-    </div>
+<div class="card">
+<h3>Síguenos</h3>
+<p>Instagram · TikTok · WhatsApp</p>
+</div>
 
-    <!-- PROGRAMACIÓN -->
-    <div class="box schedule">
-        <h3>PROGRAMACIÓN</h3>
+</div>
 
-        <ul>
-            <li><span>00:00</span> Night Vibes</li>
-            <li><span>03:00</span> La 30 Urbana</li>
-            <li><span>06:00</span> Wake Up</li>
-            <li><span>09:00</span> Flow 30</li>
-            <li><span>12:00</span> After Party</li>
-        </ul>
-    </div>
-
-    <!-- SOBRE -->
-    <div class="box about">
-        <h3>SOBRE LA 30</h3>
-
-        <p>
-        LA 30 es más que una radio, es un movimiento.
-        Conectamos culturas, sonidos y personas a través de la música.
-        </p>
-    </div>
-
-    <!-- SIGUENOS -->
-    <div class="box social">
-        <h3>SÍGUENOS</h3>
-
-        <div class="social-icons">
-            <div>📸</div>
-            <div>🎵</div>
-            <div>💬</div>
-        </div>
-    </div>
-
-</section>
-
-<footer>
-    © 2026 LA 30
+<footer style="text-align:center;padding:20px;color:#666;">
+© 2026 LA 30
 </footer>
 
-<!-- PLAYER FLOTANTE -->
+<!-- PLAYER BAR -->
 <div class="player-bar">
-    <div>
-        <strong>LA 30</strong>
-        <p id="statusText">En vivo 🔴</p>
-    </div>
+<div>
+<strong>LA 30</strong>
+<p id="status">En vivo 🔴</p>
+</div>
 
-    <button class="play-btn play-control" onclick="toggleRadio()">▶</button>
+<button class="play-btn play-control" onclick="toggleRadio()">▶</button>
 </div>
 
 <script>
+
 const radio = document.getElementById("radio");
 const controls = document.querySelectorAll(".play-control");
-const statusText = document.getElementById("statusText");
-const equalizer = document.getElementById("equalizer");
+const status = document.getElementById("status");
+const eq = document.getElementById("eq");
 
-let playing = false;
+let playing=false;
 
-function toggleRadio() {
-    if (!playing) {
-        radio.play().catch(err => console.log(err));
-        playing = true;
-        updateUI("⏸", "Reproduciendo 🔊");
-equalizer.querySelectorAll("span").forEach(bar => {
-    bar.style.animationPlayState = "running";
-});
-    } else {
-        radio.pause();
-        playing = false;
-       updateUI("▶", "En vivo 🔴");
-equalizer.querySelectorAll("span").forEach(bar => {
-    bar.style.animationPlayState = "paused";
-});
-    }
+/* PLAY / PAUSE GLOBAL */
+function toggleRadio(){
+if(!playing){
+radio.play();
+playing=true;
+updateUI("⏸","Reproduciendo 🔊");
+}else{
+radio.pause();
+playing=false;
+updateUI("▶","En vivo 🔴");
+}
 }
 
-function updateUI(icon, text) {
-    controls.forEach(btn => btn.textContent = icon);
-    statusText.textContent = text;
+function updateUI(icon,text){
+controls.forEach(btn=>btn.textContent=icon);
+status.textContent=text;
+
+eq.querySelectorAll("span").forEach(bar=>{
+bar.style.animationPlayState=playing?"running":"paused";
+});
 }
+
+/* METADATA (SI DISPONIBLE) */
+async function getTrack(){
+try{
+const res=await fetch("https://radio.conectarservidor.com:8006/status-json.xsl");
+const data=await res.json();
+
+let title=data.icestats.source.title;
+
+document.getElementById("track").textContent=title;
+document.getElementById("trackCard").textContent=title;
+
+}catch(e){
+document.getElementById("track").textContent="En vivo 🔴";
+}
+}
+
+setInterval(getTrack,10000);
+getTrack();
+
 </script>
 
-<script>
-async function getNowPlaying() {
-    try {
-        const url = "https://api.allorigins.win/raw?url=" + encodeURIComponent(
-            "https://radio.conectarservidor.com:8006/status-json.xsl"
-        );
-
-        const response = await fetch(url);
-        const data = await response.json();
-
-        const stream = data.icestats.source;
-
-        let title = "";
-
-        if (Array.isArray(stream)) {
-            title = stream[0].title;
-        } else {
-            title = stream.title;
-        }
-
-        if (title && title.includes("-")) {
-            const parts = title.split("-");
-
-            const artist = parts[0].trim();
-            const song = parts[1].trim();
-
-            // PLAYER PRINCIPAL
-            document.getElementById("artistName").textContent = artist;
-            document.getElementById("songTitle").textContent = song;
-
-            // TARJETA
-            document.getElementById("cardArtist").textContent = artist;
-            document.getElementById("cardTitle").textContent = song;
-
-        } else {
-            document.getElementById("artistName").textContent = "LA 30";
-            document.getElementById("songTitle").textContent = title || "En vivo 🔴";
-
-            document.getElementById("cardArtist").textContent = "LA 30";
-            document.getElementById("cardTitle").textContent = title || "En vivo 🔴";
-        }
-
-        // PLAYER FLOTANTE
-        document.getElementById("statusText").textContent = title || "En vivo 🔴";
-
-    } catch (error) {
-        console.log("Error metadata:", error);
-    }
-}
-
-// refresca cada 10s
-setInterval(getNowPlaying, 10000);
-getNowPlaying();
-</script>
-    
 </body>
 </html>
