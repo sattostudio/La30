@@ -238,7 +238,38 @@ padding:20px;
 color:#666;
 }
 
- 
+.program-item{
+display:flex;
+align-items:center;
+gap:12px;
+margin:12px 0;
+}
+
+/* HORAS NEON */
+.time{
+font-size:12px;
+font-weight:600;
+min-width:95px;
+
+background:linear-gradient(90deg,#00f0ff,#ff00c8,#ff7a00);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+/* IMAGEN PROGRAMA */
+.program-item img{
+width:40px;
+height:40px;
+border-radius:8px;
+object-fit:cover;
+}
+
+/* NOMBRE PROGRAMA */
+.program-item p{
+margin:0;
+font-size:14px;
+color:#ddd;
+} 
 
 </style>
 </head>
@@ -313,12 +344,31 @@ oninput="radio.volume = this.value" class="volume-slider">
 
 <div class="card program">
 <h3>Programación</h3>
-<ul>
-<li>00:00 Night Vibes</li>
-<li>06:00 Wake Up</li>
-<li>12:00 Flow 30</li>
-<li>18:00 After Party</li>
-</ul>
+
+<div class="program-item">
+<span class="time">08:00 - 10:00</span>
+<img src="prog1.jpg">
+<p>Morning Flow</p>
+</div>
+
+<div class="program-item">
+<span class="time">12:00 - 14:00</span>
+<img src="prog2.jpg">
+<p>Midday Beats</p>
+</div>
+
+<div class="program-item">
+<span class="time">16:00 - 19:00</span>
+<img src="prog3.jpg">
+<p>Afternoon Vibes</p>
+</div>
+
+<div class="program-item">
+<span class="time">20:00 - 23:00</span>
+<img src="prog4.jpg">
+<p>Night Session</p>
+</div>
+
 </div>
 
 <div class="card">
