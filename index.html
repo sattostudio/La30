@@ -251,9 +251,25 @@ font-size:12px;
 font-weight:600;
 min-width:95px;
 
-background:linear-gradient(90deg,#00f0ff,#ff00c8,#ff7a00);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
+}
+
+/* degradado progresivo por bloque */
+.program-item:nth-child(1) .time{
+background:linear-gradient(90deg,#00f0ff,#00c3ff);
+}
+
+.program-item:nth-child(2) .time{
+background:linear-gradient(90deg,#00f0ff,#ff00c8);
+}
+
+.program-item:nth-child(3) .time{
+background:linear-gradient(90deg,#ff00c8,#ff7a00);
+}
+
+.program-item:nth-child(4) .time{
+background:linear-gradient(90deg,#ff7a00,#ff3b00);
 }
 
 /* IMAGEN PROGRAMA */
