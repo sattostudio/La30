@@ -276,6 +276,15 @@ background-image:linear-gradient(90deg,#00f0ff,#ff00c8);
 background-image:linear-gradient(90deg,#ff7a00,#ff3b00);
 }
 
+.program-img{
+width:100%;
+height:140px;
+object-fit:cover;
+border-radius:12px;
+margin-bottom:10px;
+box-shadow:0 0 15px rgba(255,0,200,0.3);
+} 
+
 </style>
 </head>
 
@@ -339,6 +348,9 @@ oninput="radio.volume = this.value" class="volume-slider">
 
 <div class="card">
 <h3>Sonando ahora</h3>
+
+<img id="programImage" src="prog1.jpg" class="program-img">
+ 
 <p id="trackCard">Cargando...</p>
 </div>
 
@@ -416,6 +428,30 @@ updateUI('<i class="fa-solid fa-play"></i>');
 }
 }
 
+/*Imagen Sonando Ahora*/
+function updateProgramImage(){
+
+const hour = new Date().getHours();
+const img = document.getElementById("programImage");
+
+if(hour >= 8 && hour < 10){
+    img.src = "prog1.jpg";
+}
+else if(hour >= 12 && hour < 14){
+    img.src = "prog2.jpg";
+}
+else if(hour >= 16 && hour < 19){
+    img.src = "prog3.jpg";
+}
+else if(hour >= 20 && hour < 23){
+    img.src = "prog4.jpg";
+}
+else{
+    img.src = "default.jpg"; // opcional fuera de horario
+}
+
+} 
+ 
 function updateUI(icon){
 controls.forEach(btn=>{
 btn.innerHTML = icon;
@@ -450,6 +486,9 @@ document.getElementById("track").textContent = "En vivo 🔴";
 setInterval(getTrack,10000);
 getTrack();
 
+setInterval(updateProgramImage, 60000); // cada minuto
+updateProgramImage();
+ 
 </script>
 
 </body>
