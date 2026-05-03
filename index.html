@@ -546,6 +546,8 @@ bar.style.animationPlayState = playing ? "running" : "paused";
 }
 
 /* METADATA */
+let delayedTitle = "En vivo 🔴";
+
 async function getTrack(){
 try{
 const res = await fetch("https://radio.conectarservidor.com:8006/status-json.xsl");
@@ -554,13 +556,17 @@ const data = await res.json();
 let source = data.icestats.source;
 let title = Array.isArray(source) ? source[0].title : source.title;
 
-document.getElementById("track").textContent = title || "En vivo 🔴";
-document.getElementById("trackCard").textContent = title || "En vivo 🔴";
+// guardas el nuevo pero NO lo muestras aún
+delayedTitle = title || "En vivo 🔴";
 
-}catch{
-document.getElementById("track").textContent = "En vivo 🔴";
+}catch{}
 }
-}
+
+// 👉 mostrar con retraso
+setInterval(()=>{
+document.getElementById("track").textContent = delayedTitle;
+document.getElementById("trackCard").textContent = delayedTitle;
+}, 30000); // 30 segundos (ajústalo)
 
 setInterval(getTrack,10000);
 getTrack();
